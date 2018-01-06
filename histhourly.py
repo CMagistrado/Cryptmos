@@ -7,7 +7,7 @@ import requests, json, time
 class Ohmu:
 
     def download(self, coin, timeFrom, fname, frq):
-        furl = "https://min-api.cryptocompare.com/data/" + frq + "?fsym=" + coin + "&tsym=USD&limit=20000&aggregate=1&toTs=" + str(timeFrom) + "&e=CCCAGG"
+        url = "https://min-api.cryptocompare.com/data/" + frq + "?fsym=" + coin + "&tsym=USD&limit=20000&aggregate=1&toTs=" + str(timeFrom) + "&e=CCCAGG"
         r = requests.get(url)
         parsedJSON = json.loads(r.text)
         try:
